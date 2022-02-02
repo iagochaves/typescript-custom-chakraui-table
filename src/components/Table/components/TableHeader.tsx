@@ -26,7 +26,7 @@ interface HeadProps {
   hasCheckbox: boolean;
   handleSortBy: (
     sortBy: 'asc' | 'desc',
-    accessor: number | symbol | string,
+    accessor: string,
   ) => void;
 }
 
@@ -86,7 +86,7 @@ const TableHeader: React.FC<HeadProps> = ({
   const { colorMode } = useColorMode();
   const totalColumns = groupColumns.reduce((acc, value) => {
     return [...acc, ...value.columns];
-  }, []);
+  }, [] as any[]);
 
   return (
     <Thead

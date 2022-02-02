@@ -4,8 +4,8 @@ import PaginationItem from './PaginationItem';
 
 interface PaginationProps {
   totalCountOfRegister: number;
-  registerPerPage?: number;
-  currentPage?: number;
+  registerPerPage: number;
+  currentPage: number;
   onPageChange: (page: number) => void;
 }
 

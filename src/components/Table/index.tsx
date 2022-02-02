@@ -96,7 +96,7 @@ const TableComponent = <ObjectType extends { id: string | number }>({
   const handleChangePage = useCallback(
     (Newpage: number) => {
       if (mode === 'Classic') {
-        onPageChange(Newpage);
+        if (onPageChange) onPageChange(Newpage);
       }
       setPage(Newpage);
     },
@@ -155,7 +155,7 @@ const TableComponent = <ObjectType extends { id: string | number }>({
             );
 
             return [...filteredValues, ...acc];
-          }, []);
+          },[] as any[]);
           return [...values];
         });
       } else {
